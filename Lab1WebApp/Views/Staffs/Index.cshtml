@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Lab1WebApp.Models.Staff>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Staff List</h1>
+<br />
+<div>
+    @Html.ActionLink("Create new","Create","Staffs")
+</div>
+<div>
+    @Html.ActionLink("Search", "Search", "Staffs")
+</div>
+<br />
+@*<div>
+    <h3> Search By Name</h3>
+    @using (Html.BeginForm())
+    {
+        <input type="text" name="name" placeholder="Enter any character...." />
+
+
+        <input type="submit" value="Search" />
+    }
+</div>
+<br />*@
+<div>
+    <table class="table">
+        <tr>
+            <th>Staff ID</th>
+            <th>Staff Name</th>
+            <th>Department</th>
+            <th>Salary</th>
+        </tr>
+
+       @foreach(var item in Model)
+       {
+           <tr>
+               <td>@item.Id</td>
+               <td>@item.Name</td>
+               <td>@item.Department</td>
+               <td>@item.Salary</td>
+           </tr>
+       }
+    </table>
+</div>

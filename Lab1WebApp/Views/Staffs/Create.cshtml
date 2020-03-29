@@ -1,0 +1,32 @@
+﻿@model Lab1WebApp.Models.Staff
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create new Staff</h1>
+@using(Html.BeginForm())
+{
+<div>
+    <div>
+        <label>Staff ID</label>
+        @Html.EditorFor(model => model.Id)
+    </div>
+    <div>
+        <label>Staff Name</label>
+        @Html.EditorFor(model => model.Name)
+    </div>
+    <div>
+        <label>Department</label>
+        @Html.EditorFor(model => model.Department)
+    </div>
+    <div>
+        <label>Salary</label>
+        @Html.EditorFor(model => model.Salary)
+    </div>
+    <div>
+        <input type="submit" value="Create" class="btn btn-info"/>
+    </div>
+
+</div>
+}
+
